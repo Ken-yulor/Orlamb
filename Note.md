@@ -1,7 +1,9 @@
 模糊查询
 
 `select * from table where name like ''%a%'';`
+
 `sleect * from table where name like' _/_%'';`
+
 `select * from table where name like '-$-%' escape '$';`
 
 order by子句中可以支持单个字段、多个字段、表达式、函数、别名
