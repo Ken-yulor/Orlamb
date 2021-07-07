@@ -8,7 +8,10 @@ from selenium.webdriver.common.by import By
 
 class TestDemo():
     def setup_method(self, method):
+        # 实例化ChromeDriver
         self.driver = webdriver.Chrome()
+        # 设置隐性等待10s
+        self.driver.implicitly_wait(10)
         self.vars = {}
 
     def teardown_method(self, method):
@@ -26,8 +29,17 @@ class TestDemo():
         self.driver.find_element(By.ID, "kw").clear()
         self.driver.find_element(By.ID, "kw").send_keys("霍格沃兹测试学院")
         self.driver.find_element(By.ID, "su").click()
+        # sleep(5)
         self.vars["window_handles"] = self.driver.window_handles
-        self.driver.find_element(By.LINK_TEXT, "霍格沃兹测试学院 - 测试开发工程师的黄埔军校").click()
-        self.vars["win9915"] = self.wait_for_window(2000)
+        self.driver.find_element(By.LINK_TEXT, "霍格沃兹测试学院-软件自动化测试开发培训_接口性能测试").click()
+        # self.vars["win9915"] = self.wait_for_window(2000)
         self.driver.close()
 
+class TestWework:
+
+    def test_demo(self):
+        opt = webdriver.ChromeOptions()
+        # 设置debug地址
+        opt.debugger_address = '127.0.0.1:9222'
+        driver = webdriver.Chrome(options=opt)
+        driver.get("http://www.baidu.com")
