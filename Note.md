@@ -61,7 +61,15 @@ selenium篇
 
 `driver.add_cookie()`
 
-
+Page Object
+做法
+    以页面为单位独立建模
+    隐藏实现细节
+    本质是面向接口编程
+优点
+    减少重复find click样板代码
+    易读性提高
+    页面修改不影响测试用例
 
 
 
