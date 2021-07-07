@@ -6,6 +6,7 @@ from selenium import webdriver
 from selenium.webdriver.remote.webdriver import WebDriver
 
 
+
 class BasePage:
 
     def __init__(self, base_driver=None):
