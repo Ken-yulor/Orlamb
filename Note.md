@@ -1,4 +1,5 @@
 模糊查询
+
 `select * from table where name like ''%a%'';`
 `sleect * from table where name like' _/_%'';`
 `select * from table where name like '-$-%' escape '$';`
