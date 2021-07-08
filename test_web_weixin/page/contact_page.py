@@ -4,11 +4,15 @@ from test_web_weixin.page.base_page import BasePage
 
 class ContactPage(BasePage):
     def add_member(self):
+        # 避免出发python的循环导入机制
+        # 这里使用了函数内引用
+        from test_web_weixin.page.add_member_page import AddMember
         """
         添加成员操作
         :return:
         """
-        pass
+        self.find().click()
+        return AddMember(self.driver)
 
     def get_member(self):
         """

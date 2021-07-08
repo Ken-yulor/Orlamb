@@ -12,7 +12,7 @@ class MainPage(BasePage):
         """跳转到添加成员页面
         """
         # 解元组操作，把元组内的元素拆分作为不同的参数传入
-        self.driver.find_element(*self._location_goto_member).click()
+        self.find(*self._location_goto_member).click()
         return AddMember(self.driver)
 
     def goto_contact(self):

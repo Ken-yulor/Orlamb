@@ -28,3 +28,17 @@ class BasePage:
                 self.driver.add_cookie(cookie)
         self.driver.get("https://work.weixin.qq.com/wework_admin/frame")
 
+    def find(self, by, value=None):
+        if value is None:
+            return self.driver.find_element(*by)
+        else:
+            return self.driver.find_element(by=by, value=value)
+
+    def finds(self, by, value=None):
+        if value is None:
+            return self.driver.find_elements(*by)
+        else:
+            return self.driver.find_elements(by=by, value=value)
+
+    def quit(self):
+        self.driver.quit()

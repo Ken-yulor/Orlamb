@@ -28,3 +28,6 @@ class TestAddMember:
         :return:
         """
         self.main.goto_contact()
+
+    def teardown_class(self):
+        self.main.quit()
