@@ -21,3 +21,9 @@ class MainPage(BasePage):
         self.find(By.ID, "menu_contacts").click()
         return ContactPage(self.driver)
 
+    def back_main(self):
+        """
+        回到首页
+        :return:
+        """
+        self.find(By.ID, "menu_index").click()

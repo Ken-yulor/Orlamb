@@ -27,5 +27,7 @@ class AddMember(BasePage):
         self.driver.find_element(self._location_acctid).send_keys(acctid)
         self.driver.find_element(self._location_Add_phone).send_keys(phone)
         self.driver.find_element(By.CSS_SELECTOR, ".js_btn_save").click()
-        error_message = self.driver.find_element(By.CSS_SELECTOR, ".member_edit_item_right.ww_inputWithTips_WithErr .ww_inputWithTips_tips").text
-        print(error_message)
+        error_message = self.find(By.CSS_SELECTOR, ".member_edit_item_right.ww_inputWithTips_WithErr .ww_inputWithTips_tips").text
+        phone_error_message = self.find(By.CSS_SELECTOR, ".member_edit_item_right.ww_inputWithTips_WithErr .ww_inputWithTips_tips").text
+        error_list = [error_message, phone_error_message]
+        return error_list
