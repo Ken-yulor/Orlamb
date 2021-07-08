@@ -17,10 +17,9 @@ class ContactPage(BasePage):
         """
 
         member_list = self.driver.find_elements(By.CSS_SELECTOR, ".member_colRight_memberTable_td:nth-child(2)")
-        member_list2 = []
-        for i in member_list:
-            member_list2.append(i.text)
-        return member_list2
+        # 列表推导式
+        member_list_res = [i.text for i in member_list]
+        return member_list_res
 
 
 
