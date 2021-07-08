@@ -1,5 +1,5 @@
+import pytest
 from test_web_weixin.page.mian_page import MainPage
-
 
 class TestAddMember:
 
@@ -17,10 +17,16 @@ class TestAddMember:
         # 3.自动跳转到通讯录页面
         res = self.main.goto_add_member().add_member().get_member()
         assert "xx" in res
-
-    def test_add_member_fail(self):
+    @pytest.mark.parametrize("acctid, phone, expect_res",
+                             [{"赫敏", "13688889999", "该账号已被'xx'占有"}])
+    def test_add_member_fail(self, acctid, phone, expect_res):
+        """
+        :param acctid: ID信息
+        :param phone: 手机信息
+        :return:
+        """
         res = self.main.goto_add_member().add_member_fail()
-        assert res == "该账号已被'xx'占有"
+        assert res == expect_res
 
     def test_add_member_by_contact(self):
         """

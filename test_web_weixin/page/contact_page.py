@@ -17,8 +17,10 @@ class ContactPage(BasePage):
         :return:
         """
         # 添加显示等待，保证按钮可以点击
-        WebDriverWait(self.driver, 9).until(
-            expected_conditions.element_to_be_clickable(self._location_goto_add_member))
+        # WebDriverWait(self.driver, 9).until(
+        #     expected_conditions.element_to_be_clickable(self._location_goto_add_member))
+        self.wait_click(self._location_goto_add_member) # wait封装后语句使用
+
         # 通过层级定位
         self.find(self._location_goto_add_member).click()
         return AddMember(self.driver)
