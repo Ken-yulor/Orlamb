@@ -18,5 +18,6 @@ class MainPage(BasePage):
     def goto_contact(self):
         """跳转到通讯录页面
         """
-        return ContactPage()
+        self.find(By.ID, "menu_contacts").click()
+        return ContactPage(self.driver)
 

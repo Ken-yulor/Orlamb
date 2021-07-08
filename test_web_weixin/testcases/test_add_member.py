@@ -27,7 +27,9 @@ class TestAddMember:
         通过通讯录页面添加成员
         :return:
         """
-        self.main.goto_contact()
+        # 判断是否添加成功的断言
+        res = self.main.goto_contact().goto_add_member().add_member().get_member()
+        assert "xx" in res
 
     def teardown_class(self):
         self.main.quit()
