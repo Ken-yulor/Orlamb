@@ -17,6 +17,11 @@ class TestAddMember:
         # 3.自动跳转到通讯录页面
         res = self.main.goto_add_member().add_member().get_member()
         assert "xx" in res
+
+    def test_add_member_fail(self):
+        res = self.main.goto_add_member().add_member_fail()
+        assert res == "该账号已被'xx'占有"
+
     def test_add_member_by_contact(self):
         """
         通过通讯录页面添加成员
