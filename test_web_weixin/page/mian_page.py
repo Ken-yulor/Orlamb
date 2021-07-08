@@ -27,3 +27,4 @@ class MainPage(BasePage):
         :return:
         """
         self.find(By.ID, "menu_index").click()
+        self.find(By.CSS_SELECTOR, "a[node-type='cancel").click()
